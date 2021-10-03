@@ -1,0 +1,34 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="5.0.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+      <None Include="..\README.md" Pack="true" PackagePath="\" />
+  </ItemGroup>
+
+  <!-- NuGet Properties -->
+  <PropertyGroup>
+    <PackageId>Xembly.ActionMapper</PackageId>
+    <PackageVersion>1.0.0</PackageVersion>
+    <Authors>Alan Roemen, Xembly</Authors>
+    <Description>
+      Xembly Action Mapper is a low level keyboard binder that allows you to associate keyboard
+      keystrokes (including modifier keys) with defined actions inside your application. Actions
+      can be mapped to a specific application or all applications.
+    </Description>
+    <Copyright>Copyright (c) 2021 Alan Roemen, Xembly, and contributors.</Copyright>
+    <PackageTags>Xembly Action Mapper Mapping Keyboard Keystroke</PackageTags>
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+    <PackageLicenseExpression>BSD-3-Clause</PackageLicenseExpression>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageProjectUrl>https://github.com/xembly/action-mapper</PackageProjectUrl>
+    <PackageReleaseNotes>See https://github.com/xembly/action-mapper/blob/master/CHANGELOG.md for release notes.</PackageReleaseNotes>
+  </PropertyGroup>
+
+</Project>

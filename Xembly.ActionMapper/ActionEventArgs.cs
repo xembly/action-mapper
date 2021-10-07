@@ -1,7 +1,10 @@
+using System;
+
 namespace Xembly.ActionMapper
 {
 	public sealed class ActionEventArgs
 	{
+		public Guid ActionId { get; internal set; }
 		public int ProcessId { get; internal set; }
 		public string ProcessName { get; internal set; }
 		public string WindowTitle { get; internal set; }

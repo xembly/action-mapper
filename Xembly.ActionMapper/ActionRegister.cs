@@ -90,9 +90,9 @@ namespace Xembly.ActionMapper
 		/// <param name="keyMap"></param>
 		/// <param name="action"></param>
 		/// <returns></returns>
-		public static ActionRegister ByWindowName(string processWindowTitle, KeyModifiers modifiers, int keyCode, Action<ActionEventArgs> action, bool onKeyDown = false) => new()
+		public static ActionRegister ByWindowTitle(string processWindowTitle, KeyModifiers modifiers, int keyCode, Action<ActionEventArgs> action, bool onKeyDown = false) => new()
 		{
-			Identifier = ProcessIdentifier.Name,
+			Identifier = ProcessIdentifier.WindowTitle,
 			ProcessValue = processWindowTitle,
 			KeyMap = new KeyMap(modifiers, keyCode, onKeyDown),
 			Action = action

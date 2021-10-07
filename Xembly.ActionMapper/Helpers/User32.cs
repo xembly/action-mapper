@@ -20,10 +20,10 @@ namespace Xembly.ActionMapper.Helpers
 		internal static extern IntPtr CallNextHookEx(IntPtr hhk, int nCode, IntPtr wParam, IntPtr lParam);
 
 		[DllImport("kernel32.dll", CharSet = CharSet.Auto, SetLastError = true)]
-		internal static extern IntPtr GetModuleHandle([MarshalAs(UnmanagedType.LPWStr)] string lpModuleName);
+		internal static extern IntPtr GetModuleHandle([MarshalAs(UnmanagedType.LPStr)] string lpModuleName);
 
 		[DllImport("user32.dll")]
-		internal static extern int GetWindowText(IntPtr hwnd, [MarshalAs(UnmanagedType.LPWStr)] StringBuilder s, int nMaxCount);
+		internal static extern int GetWindowText(IntPtr hwnd, [MarshalAs(UnmanagedType.LPStr)] StringBuilder s, int nMaxCount);
 
 		[DllImport("user32.dll")]
 		internal static extern IntPtr GetForegroundWindow();

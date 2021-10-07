@@ -53,7 +53,7 @@ namespace KeyMapper
 			keyActionMapper.Add(
 				ActionRegister.All(KeyModifiers.Shift | KeyModifiers.Control, (int) Keys.F, ShiftControlFPressedKeyDown, true),
 				ActionRegister.All(KeyModifiers.Shift | KeyModifiers.Control, (int) Keys.F, ShiftControlFPressed),
-				ActionRegister.ByWindowName("notepad", KeyModifiers.None, (int) Keys.D, DPressed),
+				ActionRegister.ByWindowTitle("notepad", KeyModifiers.None, (int) Keys.D, DPressed),
 				ActionRegister.ByName("Notepad", KeyModifiers.None, (int) Keys.S, SPressed),
 				ActionRegister.ById(58612, KeyModifiers.None, (int) Keys.W, WPressed));
 			return (null, keyActionMapper);
@@ -65,7 +65,7 @@ namespace KeyMapper
 				.AddKeyActions(
 					ActionRegister.All(KeyModifiers.Shift | KeyModifiers.Control, (int) Keys.F, ShiftControlFPressedKeyDown, true),
 					ActionRegister.All(KeyModifiers.Shift | KeyModifiers.Control, (int) Keys.F, ShiftControlFPressed),
-					ActionRegister.ByWindowName("notepad", KeyModifiers.None, (int) Keys.D, DPressed),
+					ActionRegister.ByWindowTitle("notepad", KeyModifiers.None, (int) Keys.D, DPressed),
 					ActionRegister.ByName("Notepad", KeyModifiers.None, (int) Keys.S, SPressed),
 					ActionRegister.ById(58612, KeyModifiers.None, (int) Keys.W, WPressed)
 				)

@@ -9,7 +9,7 @@ namespace Xembly.ActionMapper.Internals
 	internal sealed class KeyActionMapper : IKeyActionMapper, IDisposable
 	{
 		private readonly KeyboardListener _keyboardListener;
-		private readonly Dictionary<Action<ActionEventArgs>, ActionRegister> _actions = new();
+		private readonly Dictionary<Guid, ActionRegister> _actions = new();
 		private bool _running = false;
 
 		public KeyActionMapper() => _keyboardListener = new(Handler);
@@ -22,9 +22,10 @@ namespace Xembly.ActionMapper.Internals
 
 		public bool IsRunning => _running;
 
-		public void Add(params ActionRegister[] actions) => actions.ForEach(r => _actions.Add(r.Action, r));
+		public Guid[] Add(params ActionRegister[] actions) =>
+			actions.Select(a => { var id = Guid.NewGuid(); _actions.Add(id, a); return id; }).ToArray();
 
-		public void Remove(params Action<ActionEventArgs>[] actions) => actions.ForEach(a => _actions.Remove(a));
+		public void Remove(params Guid[] actionIds) => actionIds.ForEach(id => _actions.Remove(id));
 
 		private void Handler(KeyMap keyMap)
 		{
@@ -37,8 +38,9 @@ namespace Xembly.ActionMapper.Internals
 				if (!FocusedWindowCheck(process, windowTitle, action.Value)) continue;
 				try
 				{
-					action.Key.Invoke(new ActionEventArgs
+					action.Value.Action.Invoke(new ActionEventArgs
 					{
+						ActionId = action.Key,
 						ProcessId = process.Id,
 						ProcessName = process.ProcessName,
 						WindowTitle = windowTitle,

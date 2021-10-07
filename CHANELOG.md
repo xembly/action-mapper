@@ -19,6 +19,11 @@ Categories:
 
 ## [Unreleased]
 
+## [1.0.1]
+### Fixed
+- Fixed bug preventing the same action being registered for multiple key bindings.
+- Corrected ActionRegister.ByWindowTitle to have the window identifier set correectly.
+
 ## [1.0.0]
 ### Added
 - Initial release of the library.

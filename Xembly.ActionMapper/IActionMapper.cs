@@ -6,8 +6,8 @@ namespace Xembly.ActionMapper
 	{
 		void Start();
 		void Stop();
-		void Add(params ActionRegister[] actions);
-		void Remove(params Action<ActionEventArgs>[] actions);
+		Guid[] Add(params ActionRegister[] actions);
+		void Remove(params Guid[] actionIds);
 	}
 
 	// https://docs.microsoft.com/en-us/archive/blogs/toub/low-level-keyboard-hook-in-c
